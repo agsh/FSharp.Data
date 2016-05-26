@@ -2241,7 +2241,7 @@ module internal HtmlCharRefs =
         |] |> Map.ofArray
 
     let (|Number|Lookup|) (orig:string) =
-        let s = orig.TrimEnd([|';'|])
+        let s = orig.Trim([|';'|])
         if s.Length > 2
         then
             let (delimeters, discriminator) = s.ToLowerInvariant() |> (fun ref ->  (ref.[0..1], ref.[ref.Length - 1]), ref.[2])
